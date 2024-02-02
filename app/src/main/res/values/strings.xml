@@ -3,4 +3,11 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">LOGIN</string>
+    <string name="product_list_fragment">PRODUCT LIST FRAGMENT</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="image">image</string>
+    <string name="product_name">Product Name</string>
+    <string name="date">Date</string>
+    <string name="price">Price</string>
 </resources>

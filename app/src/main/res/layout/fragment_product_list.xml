@@ -5,8 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".fragments.ProductListFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
+
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:text="@string/product_list_fragment" />
 
 </FrameLayout>
