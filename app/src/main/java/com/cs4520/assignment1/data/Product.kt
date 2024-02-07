@@ -9,7 +9,7 @@ package com.cs4520.assignment1.data
  */
 sealed interface Product {
     val name: String
-    val date: String
+    val date: String?
     val price: Int
     val type: String
 }
@@ -23,7 +23,7 @@ sealed interface Product {
  */
 class FoodProduct(
     override val name: String,
-    override val date: String,
+    override val date: String?,
     override val price: Int,
     override val type: String = "Food"
 ): Product
@@ -37,7 +37,7 @@ class FoodProduct(
  */
 class EquipmentProduct(
     override val name: String,
-    override val date: String,
+    override val date: String?,
     override val price: Int,
     override val type: String = "Equipment"
 ): Product

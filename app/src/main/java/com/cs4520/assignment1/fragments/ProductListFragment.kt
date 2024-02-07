@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.cs4520.assignment1.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -35,7 +36,12 @@ class ProductListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_product_list, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_product_list, container, false)
+
+        // TODO: convert dataset to list of Product and pass into custom adapter
+        val recyclerView: RecyclerView = rootView.findViewById(R.id.product_list_view)
+
+        return rootView
     }
 
     companion object {
