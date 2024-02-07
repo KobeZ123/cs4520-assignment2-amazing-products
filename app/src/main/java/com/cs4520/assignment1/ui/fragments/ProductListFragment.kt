@@ -1,12 +1,16 @@
-package com.cs4520.assignment1.fragments
+package com.cs4520.assignment1.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.cs4520.assignment1.ui.adapters.ProductCardAdapter
 import com.cs4520.assignment1.R
+import com.cs4520.assignment1.productsDataset
+import com.cs4520.assignment1.util.mapToProductList
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -38,8 +42,11 @@ class ProductListFragment : Fragment() {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_product_list, container, false)
 
-        // TODO: convert dataset to list of Product and pass into custom adapter
+        val productList = productsDataset.mapToProductList()
+        val productCardAdapter = ProductCardAdapter(productList)
         val recyclerView: RecyclerView = rootView.findViewById(R.id.product_list_view)
+        recyclerView.adapter = productCardAdapter
+        recyclerView.layoutManager = LinearLayoutManager(this.context)
 
         return rootView
     }

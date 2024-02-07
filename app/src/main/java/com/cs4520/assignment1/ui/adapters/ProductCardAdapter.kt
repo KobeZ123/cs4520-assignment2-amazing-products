@@ -1,4 +1,4 @@
-package com.cs4520.assignment1
+package com.cs4520.assignment1.ui.adapters
 
 import android.graphics.Color
 import android.view.LayoutInflater
@@ -8,12 +8,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.cs4520.assignment1.R
 import com.cs4520.assignment1.data.EquipmentProduct
 import com.cs4520.assignment1.data.FoodProduct
 import com.cs4520.assignment1.data.Product
 
 class ProductCardAdapter(
-    private val dataSet: Array<Product>
+    private val dataSet: List<Product>
 ) : RecyclerView.Adapter<ProductCardAdapter.ViewHolder>() {
     /**
      * reference to view holder
