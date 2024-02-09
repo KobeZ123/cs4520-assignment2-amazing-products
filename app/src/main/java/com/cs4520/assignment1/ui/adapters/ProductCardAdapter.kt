@@ -39,10 +39,13 @@ class ProductCardAdapter(
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val product: Product = dataSet[position]
         viewHolder.nameText.text = product.name
-        viewHolder.priceText.text = product.price.toString()
+        viewHolder.priceText.text = String.format("$ %d", product.price)
         product.date?.let {
             viewHolder.dateText.text = it
+        } ?: run {
+            viewHolder.dateText.visibility = View.GONE
         }
+
         when (product) {
             is EquipmentProduct -> {
                 viewHolder.cardContainer.setBackgroundColor(Color.parseColor("#E06666"))
