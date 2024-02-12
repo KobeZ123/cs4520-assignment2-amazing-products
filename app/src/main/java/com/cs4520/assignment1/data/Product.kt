@@ -7,11 +7,11 @@ package com.cs4520.assignment1.data
  * @property price product price
  * @property type product type
  */
-sealed interface Product {
-    val name: String
-    val date: String?
-    val price: Int
-    val type: String
+sealed class Product {
+    abstract val name: String
+    abstract val date: String?
+    abstract val price: Int
+    abstract val type: String
 }
 
 /**
@@ -26,7 +26,7 @@ class FoodProduct(
     override val date: String?,
     override val price: Int,
     override val type: String = "Food"
-): Product
+): Product()
 
 /**
  * This interface represents a Equipment product
@@ -40,4 +40,4 @@ class EquipmentProduct(
     override val date: String?,
     override val price: Int,
     override val type: String = "Equipment"
-): Product
+): Product()

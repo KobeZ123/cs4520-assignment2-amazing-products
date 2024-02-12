@@ -20,12 +20,11 @@ class ProductCardAdapter(
      * reference to view holder
      */
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val cardContainer = itemView.findViewById<ConstraintLayout>(R.id.product_card_container)
-        val imageView = itemView.findViewById<ImageView>(R.id.product_image)
-        val nameText = itemView.findViewById<TextView>(R.id.product_name_text)
-        val priceText = itemView.findViewById<TextView>(R.id.product_price_text)
-        val dateText = itemView.findViewById<TextView>(R.id.product_date_text)
-
+        val cardContainer: ConstraintLayout = itemView.findViewById(R.id.product_card_container)
+        val imageView: ImageView = itemView.findViewById(R.id.product_image)
+        val nameText: TextView = itemView.findViewById(R.id.product_name_text)
+        val priceText: TextView = itemView.findViewById(R.id.product_price_text)
+        val dateText: TextView = itemView.findViewById(R.id.product_date_text)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
