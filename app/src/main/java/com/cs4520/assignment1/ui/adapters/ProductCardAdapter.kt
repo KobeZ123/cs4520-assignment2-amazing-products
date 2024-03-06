@@ -9,8 +9,6 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.cs4520.assignment1.R
-import com.cs4520.assignment1.data.EquipmentProduct
-import com.cs4520.assignment1.data.FoodProduct
 import com.cs4520.assignment1.data.Product
 
 class ProductCardAdapter(
@@ -39,18 +37,15 @@ class ProductCardAdapter(
         val product: Product = dataSet[position]
         viewHolder.nameText.text = product.name
         viewHolder.priceText.text = String.format("$ %d", product.price)
-        product.date?.let {
-            viewHolder.dateText.text = it
-        } ?: run {
-            viewHolder.dateText.visibility = View.GONE
-        }
+        viewHolder.dateText.text = product.date
+        viewHolder.dateText.visibility = if (product.date != null) View.VISIBLE else View.GONE
 
         when (product) {
-            is EquipmentProduct -> {
+            is Product.EquipmentProduct -> {
                 viewHolder.cardContainer.setBackgroundColor(Color.parseColor("#E06666"))
                 viewHolder.imageView.setImageResource(R.drawable.equipment)
             }
-            is FoodProduct -> {
+            is Product.FoodProduct -> {
                 viewHolder.cardContainer.setBackgroundColor(Color.parseColor("#FFD965"))
                 viewHolder.imageView.setImageResource(R.drawable.food)
             }

@@ -1,7 +1,5 @@
 package com.cs4520.assignment1.util
 
-import com.cs4520.assignment1.data.EquipmentProduct
-import com.cs4520.assignment1.data.FoodProduct
 import com.cs4520.assignment1.data.Product
 
 /**
@@ -16,20 +14,18 @@ fun List<List<Any?>>.mapToProductList(): List<Product> {
             && it[3] is Int) {
             when (it[1]) {
                 "Equipment" -> {
-                    EquipmentProduct(
-                        name = it[0] as String,
-                        date = it[2] as String?,
-                        price = it[3] as Int,
-                        type = it[1] as String,
+                    Product.EquipmentProduct(
+                        equipmentName = it[0] as String,
+                        equipmentDate = it[2] as String?,
+                        equipmentPrice = it[3] as Int,
                     )
 
                 }
                 "Food" ->
-                    FoodProduct(
-                        name = it[0] as String,
-                        date = it[2] as String?,
-                        price = it[3] as Int,
-                        type = it[1] as String,
+                    Product.FoodProduct(
+                        foodName = it[0] as String,
+                        foodDate = it[2] as String?,
+                        foodPrice = it[3] as Int,
                     )
                 else ->
                     throw IllegalStateException("The dataset has unsupported product type!")
